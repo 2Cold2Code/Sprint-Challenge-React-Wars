@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
+import axios from 'axios';
 
+axios.get('https://pokeapi.co/').then(r => console.log(r)).catch(e => console.log(e))
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
