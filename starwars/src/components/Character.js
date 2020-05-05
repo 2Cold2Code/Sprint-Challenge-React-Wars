@@ -1,6 +1,7 @@
 // Write your Character component here
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Description from './Description'
 
 function Character() {
   const [character, setCharacter] = useState([]);
@@ -19,29 +20,18 @@ function Character() {
     return (
       <section
         style={{
-          width: "95%",
+          width: "98%",
           backgroundColor: "red",
           border: "1px solid black",
           display: "flex",
           flexFlow: "row-wrap",
-          
           justifyContent: "space-around",
+          marginBottom: "2px",
+          alignSelf: "center"
         }}
       >
         <h1 className="name">{obj.name}</h1>
-        <section
-          style={{
-            backgroundColor: "palevioletred",
-            width: "20%",
-            display: "flex",
-            flexFlow: "row-wrap",
-            justifyContent: "space-around",
-          }}
-          className="main-content"
-        >
-          <p>{`Gender: ${obj.gender} Eye color: ${obj.eye_color}, born ${obj.birth_year}`}</p>
-          <p>{`Hair color: ${obj.hair_color}`}</p>
-        </section>
+        <Description gender={obj.gender} eyes={obj.eye_color} birthYear={obj.birth_year} hair={obj.hair_color}/>
       </section>
     );
   });
